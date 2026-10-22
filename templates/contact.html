@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+
+<h1>Contact Me</h1>
+
+{% if submitted %}
+
+<div class="alert alert-success" role="alert">
+    Thank you for submitting the form!
+</div>
+
+<p><strong>First Name:</strong> {{ first_name }}</p>
+<p><strong>Last Name:</strong> {{ last_name }}</p>
+<p><strong>Email Address:</strong> {{ email }}</p>
+<p><strong>Favorite Sport:</strong> {{ favorite_sport }}</p>
+{% else %}
+<form method="POST">
+
+ <div class="mb-3">
+    <label for="first_name" class="form-label">First Name</label>
+    <input type="text" class="form-control" id="first_name" name="first_name" required>
+</div>
+
+<div class="mb-3">
+    <label for="last_name" class="form-label">Last Name</label>
+    <input type="text" class="form-control" id="last_name" name="last_name" required>
+</div>
+
+<div class="mb-3">
+    <label for="email" class="form-label">Email Address</label>
+    <input type="email" class="form-control" id="email" name="email" required>
+</div>
+
+<div class="mb-3">
+    <label for="favorite_sport" class="form-label">Favorite Sport</label>
+    <input type="text" class="form-control" id="favorite_sport" name="favorite_sport">
+</div>
+
+<button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+
+{% endif %}
+{% endblock%}
+
+
